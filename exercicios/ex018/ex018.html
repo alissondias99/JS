@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em JS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        h1{
+            font-family: 'Pacifico', cursive;
+        }
+
+        body {
+            font-size: 13pt;
+        }
+        button {
+            padding: 15pt;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body onload="sortear()">
+
+    <h1>Tente advinhar o número</h1>
+
+    <button onclick='advinhar()'id = botao>Tente advinhar</button>
+
+    <section id='res'>
+        <p>Pensei em número entre 1 e 100</p>
+    </section>
+
+    <script src='script.js'>
+    </script>
+</body>
+</html>

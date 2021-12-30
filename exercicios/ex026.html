@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+       h1, h2{font-family: 'Pacifico', cursive;}
+       body{font-size: 13pt;}
+       button {padding: 1pt; font-size: 13pt; background-color: green; color: white;}
+   </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>Escreva um número na caixa a seguir e te mostrarei a tabuada dele.</p>
+    Número: <input type="number" name="num" id="num"> <button onclick="tabuada()">Tabuada</button>
+    <section id='res'></section>
+    <script>
+        function tabuada() {
+            let n = Number(document.getElementById("num").value)
+            let res = document.getElementById('res')
+            res.innerHTML = `<h2>Tabuada do ${n}</h2>`
+            let t = 1
+            while (t <= 10) {
+                res.innerHTML += `${n} x ${t} = <strong>${n*t}</strong> <br/>`
+                t ++
+            }
+            
+        }
+    </script>
+</body>
+</html>

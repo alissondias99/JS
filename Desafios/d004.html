@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o troco</title>
+    <style>
+        button{
+            font-size: 15pt;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco</h1>
+    <button onclick="calcular()">Comprar um produto</button>
+    <script>
+        function calcular() {
+           var produto = window.prompt("Qual produto está comprando?")
+           var preço = window.prompt(`Por favor informe o preço do ${produto} que está comprando`)
+           var pago = window.prompt(`Qual foi o valor que você pagou pelo ${produto}`)
+           if (pago == preço){
+               window.alert(`Você comprou um ${produto} de R$${preço} reais, e pagou com R$${pago} reais, não há troco`)
+           }else{
+               window.alert(`Você comprou um ${produto} de R$${preço} reais, e pagou com R$${pago} reais, seu troco é de R$${pago - preço}`)
+           }
+        }
+    </script>
+</body>
+</html>

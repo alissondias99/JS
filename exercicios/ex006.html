@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS 2</title>
+    <style>
+        body {
+            font-size: 13pt;
+        }
+        button {
+            padding: 15pt;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button onclick=somar()>Iniciar soma</button>
+    <p id="soma"># + # = #</p>
+    <script>
+        function somar() {
+            var n1 = Number(window.prompt("Digite o 1º valor"))
+            var n2 = Number(window.prompt("Digite o 2º valor"))
+            var soma = document.getElementById("soma")
+            soma.innerHTML = `<mark>${n1}</mark> + <mark>${n2}</mark> = <strong>${n1 + n2}</strong>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        h1{font-family: 'Pacifico', cursive;}
+        
+        body{font-size: 13pt;}
+        button {padding: 15pt; font-size: 13pt;}
+    </style>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <button onclick="verificar()">Informe o mês aqui</button>
+    <p id="res"></p>
+    <script>
+        function verificar() {
+            var res = document.getElementById("res")
+            var mes = window.prompt("Qual o mês? (Digite o nome por extenso")
+            let estacao
+            switch (mes.toUpperCase()) {
+                case 'JANEIRO': case 'FEVEREIRO': case 'MARÇO':
+                    estacao = 'INVERNO'
+                    break
+                case 'ABRIL':  case 'MAIO': case 'JUNHO': case '6':
+                    estacao = 'PRIMAVERA'
+                    break
+                case 'JULHO': case 'AGOSTO': case 'SETEMBRO':
+                estacao = 'VERÃO'
+                break
+                case 'OUTUBRO': case 'NOVEMBRO': case 'DEZEMBRO':
+                    estacao = 'OUTONO'
+                    break
+                default:
+                    estacao = 'INDEFINIDA'            
+                    break
+            }
+            res.innerHTML = `No mês de <mark>${mes.toUpperCase()}</mark> estamos no periodo do <mark>${estacao}</mark>`
+        }
+    </script>
+</body>
+</html>

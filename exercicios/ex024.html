@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando de 100 a 1</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+        h1, h2{font-family: 'Pacifico', cursive;}
+        body{font-size: 13pt;}
+        button {padding: 15pt; font-size: 13pt;}
+    </style>
+</head>
+<body>
+    <h1>Contagem regressiva de 100 a 1</h1>
+    <button onclick='contar()'>Contar de 100 a 1</button>
+    <section id="contagem"></section>
+    <script>
+        function contar() {
+            let cont = document.getElementById("contagem")
+            cont.innerHTML += '<h2>Contagem regressiva de 100 a 1</h2>'
+            let c = 100
+            while (c >= 1){
+                cont.innerHTML += `${c} &#x1F449`
+                c --
+            }
+            cont.innerHTML += '&#x1F3C1 FIM'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de Salário</title>
+    <style>
+        body{
+            font-size: 15pt;
+        }
+        button {
+            padding: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+
+    <button onclick="reajustar()">Reajustar Salário</button>
+
+    <p id="info"></p>
+
+    <div id="calculo"></div>
+
+    <script>
+        function reajustar() {
+            var func = window.prompt('Qual o nome do funcionário?')
+
+            var sal = window.prompt('Qual o salário do funcionário?')
+
+            var reaj = window.prompt(`Qual a porcentagem do reajuste do funcionário ${func}`)
+
+            var nsal = (reaj/100 + 1) * sal
+
+            var info = document.getElementById('info')
+
+            info.style.fontWeight = 'bold'
+
+            info.innerHTML = `O funcionário ${func} recebeu um aumento de ${reaj}% no salário`
+
+            var calculo = document.getElementById('calculo')
+
+            calculo.style.lineHeight = '2em'
+
+            calculo.innerHTML = `O salário era de R$ ${sal}. <br/>
+            Com o aumento de ${reaj}% o novo salário de ${func} será de R$ ${nsal.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

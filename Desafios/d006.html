@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+        button{
+            font-size: 15pt;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperaturas</h1>
+    <button onclick="converter()">Converter</button>
+
+    <h2 id="celcius"></h2>
+
+    <div id="convertido"></div>
+
+    <script>
+        function converter() {
+           var grausc = window.prompt('Digite um temperatua em ºC (celcius)')
+            var C = document.getElementById("celcius");
+            var convertido = document.getElementById("convertido")
+            var kelvin = Number(grausc) + parseFloat(273.15)
+            C.innerHTML = `${grausc}ºC  são equivalente a ...`
+            convertido.style.lineHeight = "2em"
+            convertido.innerHTML = `
+            ${kelvin.toFixed(2)}ºK (Kilvin) <br/>
+            ${Number(grausc * 9/5 + 32)}ºF (Fahrenheit)`
+
+        }
+    </script>
+</body>
+</html>

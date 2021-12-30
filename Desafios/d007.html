@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor de Moedas</title>
+    <style>
+    button{
+       padding: 10px;
+       font-size: 14pt; 
+    }
+    </style>
+</head>
+<body>
+
+    <h1>Convertor de R$ ➝ UR$</h1>
+
+    <button onclick="converter()">Converter</button>
+    <script>
+        function converter() {
+            var reais = window.prompt('Quantos reais quer converter?')
+            var cotação = window.prompt('Qual a cotação atual do dolar')
+            var resultado = Number(reais) / parseFloat(cotação)
+            window.alert(`Com uma cotação de R$${cotação}, R$${reais} reais equivalem a UR$ ${resultado.toFixed(2)} dolares`)
+        }
+    </script>
+</body>
+</html>

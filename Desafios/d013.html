@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        body {
+            font-size: 14pt;
+            line-height: 3em;
+        }
+        button {
+            padding: 15px;
+            font-size: 12pt;
+        }
+        mark {
+            background-color:red;
+        }
+
+        mark#recu{
+            background-color: rgb(231, 231, 123);
+        }
+
+        mark#aprov{
+            background-color: rgb(7, 212, 7);
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+
+    <button onclick="verificar()">Adicionar notas de Aluno</button>
+
+    <section id="situacao">
+        Clique no botão acima para adicionar as notas do(a) aluno(a)
+    </section>
+
+    <script>
+        function verificar() {
+            var aluno = window.prompt('Qual o nome do aluno?')
+            var nota1 = Number(window.prompt('1º Nota'))
+            var nota2 = Number(window.prompt('2º Nota'))
+            var media = (nota1 + nota2) / 2
+            var situacao = document.getElementById('situacao')
+            situacao.style.lineHeight = '30px'
+            if (media < 3){
+                situacao.innerHTML = `<h2>A situação de ${aluno} é...<br/></h2> 
+                Com as notas ${nota1} e ${nota2} a <strong>média é ${media}</strong>.<br/>
+                Com a média abaixo de 3 a aluno está <mark><strong>REPROVADO</strong></mark>.`
+            } else if ( media >= 3 && media <=6) {
+                situacao.innerHTML = `<h2>A situação de ${aluno} é...<br/></h2> 
+                Com as notas ${nota1} e ${nota2} a <strong>média é ${media}</strong>.<br/>
+                Com a média entre 3 e 6 a aluno está <mark id="recu"><strong>RECUPERAÇÃO</strong></mark>.`
+            } else if (media > 6){
+                situacao.innerHTML = `<h2>A situação de ${aluno} é...<br/></h2> 
+                Com as notas ${nota1} e ${nota2} a <strong>média é ${media}</strong>.<br/>
+                Com a média maior que 6 a aluno está <mark id="aprov"><strong>APROVADO</strong></mark>.`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        body {
+            font-size: 13pt;
+        }
+        button {
+            padding: 15px;
+            font-size: 12pt
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+
+    <button onclick="calcular()">Calcular</button>
+    <section id="calculo">
+        Considerando um equação no formato <strong>ax² + bx + c = 0</strong>, aperte o Botão acima para calcular o valor de ▲
+    </section>
+
+    <script>
+        function calcular() {
+            var a = window.prompt("Digite o valor de a")
+            var b = window.prompt("Digite o valor de b")
+            var c = window.prompt("Digite o valor de c")
+            var calculo = document.getElementById("calculo")
+            var função = `${a}x² + ${b}x + ${c} = 0`
+            var conta = `${b}² - 4 x ${a} x ${c}`
+            calculo.style.lineHeight = '2em'
+            calculo.innerHTML = `
+            A equação atual é <strong>${função}</strong> <br/>
+            A conta ser feita é ▲ = <strong>${conta}</strong> <br/>
+            O valor calculado foi <mark>▲ = ${b**2 - 4 *a * c}</mark>`
+        }
+    </script>
+</body>
+</html>

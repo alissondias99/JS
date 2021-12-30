@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de desconto</title>
+    <style>
+        button {
+            font-size: 12pt;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="calcular()">Calcular desconto de 10%</button>
+    <div id="desconto"></div>
+    <script>
+        function calcular() {
+            var produto = window.prompt('Qual o produto você está comprando?')
+            var preço = window.prompt(`Qual o preço de ${produto}`)
+            let desconto = document.getElementById('desconto')
+            let preçon = preço * 10/100 - preço
+            desconto.style.lineHeight = '2em'
+            desconto.innerHTML = `O preço original de ${produto} é R$${preço} <br/>
+            Com um desconto de 10% o preço de ${produto} passou a ser R$ ${Math.abs(preçon.toFixed(2))}`
+
+
+        }
+    </script>
+</body>
+</html>

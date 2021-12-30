@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body{
+            font-size: 14pt;
+        }
+        button{
+            font-size: 15pt;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+
+    <button onclick="calcular()">Verificar</button>
+
+    <section id="calculo">
+        Clique no botão para verificar a mudança no preço
+    </section>
+
+    <script>
+
+        function calcular() {
+
+            var preco = Number(window.prompt('Digite um preço antigo do produto'))
+            
+            var npreco = Number(window.prompt('Digite o novo preço do produto'))
+
+            var calculo = document.getElementById('calculo')
+
+            calculo.style.lineHeight = '2em'
+
+            if (preco < npreco) {
+
+                let diferenca =  npreco - preco
+                let porc = (npreco - preco) / preco * 100
+
+                calculo.innerHTML = `
+                O produto custava R$${preco} e agora custa R$${npreco}.<br/>
+                Hoje o produto está mais caro. <br/>
+                O aumento foi de R$${diferenca}. <br/>
+                Foi um aumento de ${porc.toFixed(2)}%.
+                
+                `
+            } 
+            
+            else if (preco > npreco) {
+
+                let diferenca = preco - npreco 
+                let porc = (preco - npreco) / preco * 100
+
+                calculo.innerHTML = `
+                O produto custava R$${preco} e agora custa R$${npreco}. <br/>
+                Hoje o produto está mais barato. <br/>
+                A queda do preço foi de R$${diferenca}. <br/>
+                Foi uma queda de ${porc.toFixed(2)}%.`
+        }
+    }
+    </script>
+</body>
+</html>

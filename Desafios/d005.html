@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <button onclick="converter()">Converter</button>
+    
+    <p id =negrito></p>
+
+    <div id="res">
+        <p id="negrito"></p>
+    </div>
+    <script>
+        function converter() {
+            var metros = window.prompt('Digite um medida em metros (m) para ser convertida')
+            var Km = metros / 1000
+            var Hm = metros / 100
+            var Dam = metros / 10
+            var dm = metros * 10
+            var cm = metros * 100
+            var mm = metros * 1000
+            var parag = document.getElementById('negrito')
+            parag.style.fontWeight = 'bold'
+            parag.style.fontSize = '15pt'
+            parag.innerHTML = `${metros.replace(".", ",")} metros (m)são equivalentes a... <br/>`
+            var calculo = document.getElementById("res")
+            calculo.style.lineHeight = "2em"
+            calculo.innerHTML = `
+            ${Km} Quilômetros (Km); <br/>
+            ${Hm} Hectômetros (Hm); <br/>
+            ${Dam} Decâmetros (Dam); <br/>
+            ${dm} Decímetros (dm); <br/>
+            ${cm} centímetros (cm); <br/>
+            ${mm} milímetros (mm)`
+        }
+    </script>
+</body>
+</html>

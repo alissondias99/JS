@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        h1{
+            font-family: 'Pacifico', cursive;
+        }
+
+        body {
+            font-size: 13pt;
+        }
+        button {
+            padding: 15pt;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gerador de números</h1>
+
+    <button onclick="gerar()">Clique em mim</button>
+    <button onclick="limpar()">Zerar</button>
+    <p id=nuns>Cada vez que o botão for clicado um número entre 1 e 1000 será gerado.</p>
+
+    <script>
+        var nuns = document.getElementById("nuns")
+        function gerar() {
+            var nuns = document.getElementById("nuns")
+            nuns.innerHTML += `<p>O número da vez foi <mark>${Math.floor(Math.random() * 1000 + 1)}</mark></p>`
+        }
+        function limpar() {
+            nuns.innerHTML = 'Cada vez que o botão for clicado um número entre 1 e 100 será gerado'
+        }
+    </script>
+</body>
+</html>
