@@ -1,5 +1,5 @@
 function calcular() {
-    var num = document.getElementById('tabuada')
+    let num = document.getElementById('tabuada')
     let tab = document.getElementById('seltab')
     if (num.value.length == 0) {
         window.alert('Digite um número válido')
